@@ -1,0 +1,15 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+app_lucky_number:
+    path: /lucky
+    controller: App\Controller\LuckyController::number
+
+app_lucky_getdate:
+    path: /lucky/getdate
+    controller: App\Controller\LuckyController::getdate
+
+app_lucky_hello:
+    path: /lucky/welcome
+    controller: App\Controller\LuckyController::welcome
