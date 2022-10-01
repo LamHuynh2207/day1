@@ -27,6 +27,11 @@ class Product
      */
     private $Price;
 
+    /**
+     * @ORM\Column(type="string", length=1000, nullable=true)
+     */
+    private $ImgUrl;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -57,6 +62,18 @@ class Product
     public function setPrice(float $Price): self
     {
         $this->Price = $Price;
+
+        return $this;
+    }
+
+    public function getImgUrl(): ?string
+    {
+        return $this->ImgUrl;
+    }
+
+    public function setImgUrl(?string $ImgUrl): self
+    {
+        $this->ImgUrl = $ImgUrl;
 
         return $this;
     }

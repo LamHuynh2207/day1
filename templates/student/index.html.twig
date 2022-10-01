@@ -23,6 +23,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Gender</th>
                 <th>Dob</th>
                 <th>PhoneNum</th>
                 <th>actions</th>
@@ -33,6 +34,7 @@
             <tr>
                 <td>{{ student.id }}</td>
                 <td>{{ student.Name }}</td>
+                <td>{{ student.Gender }}</td>
                 <td>{{ student.Dob ? student.Dob|date('Y-m-d') : '' }}</td>
                 <td>{{ student.PhoneNum }}</td>
                 <td>
@@ -47,7 +49,7 @@
         {% endfor %}
         </tbody>
     </table>
-    <button class="btn btn-primary" href="{{ path('app_student_new') }}" type="button">Create new</button>
+    <a class="btn btn-primary" href="{{ path('app_student_new') }}" type="button">Create new</a>
     </div>
     
     <div class="container">

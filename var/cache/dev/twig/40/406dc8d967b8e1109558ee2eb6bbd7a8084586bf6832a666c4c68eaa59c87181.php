@@ -99,7 +99,7 @@ class __TwigTemplate_0d1881a4be30b194968e957efebc7b75ab8480ab73a16e1c46f991a0837
 
     ";
         // line 12
-        echo twig_include($this->env, $context, "student/_delete_form.html.twig");
+        echo twig_include($this->env, $context, "student/_delete_form.html.twig", ["button_label" => "Delete"]);
         echo "
 ";
         
@@ -138,7 +138,7 @@ class __TwigTemplate_0d1881a4be30b194968e957efebc7b75ab8480ab73a16e1c46f991a0837
 
     <a href=\"{{ path('app_student_index') }}\">back to list</a>
 
-    {{ include('student/_delete_form.html.twig') }}
+    {{ include('student/_delete_form.html.twig', {'button_label': 'Delete'}) }}
 {% endblock %}
 ", "student/edit.html.twig", "C:\\Users\\PC\\SymfonyDir\\day1\\templates\\student\\edit.html.twig");
     }

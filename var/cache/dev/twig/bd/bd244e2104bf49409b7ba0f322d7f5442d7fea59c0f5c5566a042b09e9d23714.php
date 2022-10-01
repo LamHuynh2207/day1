@@ -47,7 +47,10 @@ class __TwigTemplate_b32cb4525c2a95fc2096d444f0eee0247a24bd77409d6f6c98329a09edf
         // line 2
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["student"]) || array_key_exists("student", $context) ? $context["student"] : (function () { throw new RuntimeError('Variable "student" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+     <button class=\"btn btn-primary\">";
+        // line 3
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Delete")) : ("Delete")), "html", null, true);
+        echo "</button>
 </form>
 ";
         
@@ -70,14 +73,14 @@ class __TwigTemplate_b32cb4525c2a95fc2096d444f0eee0247a24bd77409d6f6c98329a09edf
 
     public function getDebugInfo()
     {
-        return array (  48 => 2,  43 => 1,);
+        return array (  52 => 3,  48 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<form method=\"post\" action=\"{{ path('app_student_delete', {'id': student.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ student.id) }}\">
-    <button class=\"btn\">Delete</button>
+     <button class=\"btn btn-primary\">{{ button_label|default('Delete') }}</button>
 </form>
 ", "student/_delete_form.html.twig", "C:\\Users\\PC\\SymfonyDir\\day1\\templates\\student\\_delete_form.html.twig");
     }

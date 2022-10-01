@@ -6,6 +6,7 @@ use App\Entity\Student;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class StudentType extends AbstractType
@@ -16,7 +17,13 @@ class StudentType extends AbstractType
             ->add('Name')
             ->add('Dob', DateType::class, ['widget' => 'single_text',])
             ->add('PhoneNum')
-        ;
+            ->add('Gender', ChoiceType::class, [
+                'choices' => [
+                    'Male' => 'M',
+                    'Female' => 'F',
+                    'Other' => 'O',
+                ],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
  * @Route("/student")
  */
@@ -20,11 +21,18 @@ class StudentController extends AbstractController
      */
     public function index(StudentRepository $studentRepository): Response
     {
-        $students = $studentRepository->findAll();
-        //$students = array_slice($students, 0, count($students) - 1);
         return $this->render('student/index.html.twig', [
-            'students' => $students,
+            'students' => $studentRepository->findAll(),
         ]);
+    }
+
+     /**
+     * @Route("/json", name="app_student_index_json", methods={"GET"})
+     */
+    public function indexJson(StudentRepository $studentRepository): Response
+    {
+        $students = $studentRepository->findAll();
+        return $this -> json($student);
     }
 
     /**
@@ -53,11 +61,40 @@ class StudentController extends AbstractController
      */
     public function show($id, StudentRepository $studentRepository): Response
     {
-        $student = $studentRepository ->find($id);
+        $student = $studentRepository->find($id);
+        if ($student == null) {
+            throw $this -> createNotFoundException('The student does not exist');
+        }
         return $this->render('student/show.html.twig', [
             'student' => $student,
         ]);
     }
+
+      /**
+     * @Route("/{id}/json", name="app_student_json", methods={"GET"})
+     */
+    public function getJson($id, StudentRepository $studentRepository): Response
+    {
+        $student = $studentRepository->find($id);
+        if ($student == null) {
+            throw $this -> createNotFoundException('The student does not exist');
+        }
+        return $this->json(['username']);
+    }
+    // //Neu nhu su dung dang sua o controller thi k dc xai ben html.twig
+    // // /**
+    // //  * @Route("/{id}", name="app_student_show", methods={"GET"})
+    // //  */
+    // public function show($id, StudentRepository $studentRepository): Response
+    // {
+    //     $student = $studentRepository->find($id);
+    //     if (!$student) {
+    //         throw $this->createNotFoundException('No student found for id ' . $id);
+    //     }
+    //     return $this->render('student/show.html.twig', [
+    //         'student' => $student,
+    //     ]);
+    // }
 
     /**
      * @Route("/{id}/edit", name="app_student_edit", methods={"GET", "POST"})
@@ -84,7 +121,7 @@ class StudentController extends AbstractController
      */
     public function delete(Request $request, Student $student, StudentRepository $studentRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$student->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $student->getId(), $request->request->get('_token'))) {
             $studentRepository->remove($student, true);
         }
 
