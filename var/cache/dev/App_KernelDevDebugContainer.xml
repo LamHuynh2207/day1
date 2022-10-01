@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\Users\PC\SymfonyDir\day1\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\Users\PC\SymfonyDir\day1\var\cache\dev</parameter>
+    <parameter key="kernel.build_dir">C:/Users/PC/SymfonyDir/day1/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:/Users/PC/SymfonyDir/day1/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:\Users\PC\SymfonyDir\day1\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -106,14 +106,14 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\Users\PC\SymfonyDir\day1/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\Users\PC\SymfonyDir\day1\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/Users/PC/SymfonyDir/day1/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:\Users\PC\SymfonyDir\day1\var\cache\dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:/Users/PC/SymfonyDir/day1/var/cache/dev/serialization.php</parameter>
     <parameter key="cache.prefix.seed">_C:\Users\PC\SymfonyDir\day1.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
@@ -123,15 +123,15 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\Users\PC\SymfonyDir\day1\var\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">C:/Users/PC/SymfonyDir/day1/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:\Users\PC\SymfonyDir\day1\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:/Users/PC/SymfonyDir/day1/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\Users\PC\SymfonyDir\day1\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:/Users/PC/SymfonyDir/day1/var/cache/dev/profiler</parameter>
     <parameter key="doctrine.dbal.logger.chain.class">Doctrine\DBAL\Logging\LoggerChain</parameter>
     <parameter key="doctrine.dbal.logger.profiling.class">Doctrine\DBAL\Logging\DebugStack</parameter>
     <parameter key="doctrine.dbal.logger.class">Symfony\Bridge\Doctrine\Logger\DbalLogger</parameter>
@@ -198,7 +198,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\Users\PC\SymfonyDir\day1\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/Users/PC/SymfonyDir/day1/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -332,11 +332,25 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\CheckAttendanceController" class="App\Controller\CheckAttendanceController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\CheckAttendanceController"/>
+      </call>
+    </service>
     <service id="App\Controller\LuckyController" class="App\Controller\LuckyController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\LuckyController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ProductController" class="App\Controller\ProductController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\ProductController"/>
       </call>
     </service>
     <service id="App\Controller\StudentController" class="App\Controller\StudentController" public="true" autowire="true" autoconfigure="true">
@@ -346,8 +360,22 @@
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\StudentController"/>
       </call>
     </service>
+    <service id="App\Form\CheckAttendanceType" class="App\Form\CheckAttendanceType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ProductType" class="App\Form\ProductType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\StudentType" class="App\Form\StudentType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\CheckAttendanceRepository" class="App\Repository\CheckAttendanceRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\StudentRepository" class="App\Repository\StudentRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -422,7 +450,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/http_cache</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -432,7 +460,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -1130,6 +1158,8 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\CheckAttendanceType</argument>
+        <argument>App\Form\ProductType</argument>
         <argument>App\Form\StudentType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1275,7 +1305,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1305,7 +1335,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1584,7 +1614,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\PC\SymfonyDir\day1\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:/Users/PC/SymfonyDir/day1/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -2780,7 +2810,7 @@
       <argument type="service" id=".service_locator.491LSII.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\PC\SymfonyDir\day1\var\cache\dev</argument>
+        <argument key="cache_dir">C:/Users/PC/SymfonyDir/day1/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -2898,13 +2928,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/annotations.php</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/annotations.php</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3044,10 +3074,10 @@
           </service>
         </argument>
       </argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/serialization.php</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/serialization.php</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3181,7 +3211,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/sessions</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3213,7 +3243,7 @@
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-          <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/sessions</argument>
+          <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/sessions</argument>
         </service>
       </argument>
     </service>
@@ -3266,7 +3296,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.Zo_Aptf"/>
+      <argument type="service" id=".service_locator.qzBMLSk"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3400,10 +3430,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/validation.php</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/validation.php</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3788,7 +3818,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:\Users\PC\SymfonyDir\day1\var\cache\dev/profiler</argument>
+      <argument>file:C:/Users/PC/SymfonyDir/day1/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -3835,7 +3865,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/App_KernelDevDebugContainer</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -4158,7 +4188,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.44.jIy9"/>
+      <argument type="service" id=".service_locator.l1no0LR"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4348,7 +4378,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -4713,7 +4743,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\Users\PC\SymfonyDir\day1\var\cache\dev/twig</argument>
+        <argument key="cache">C:/Users/PC/SymfonyDir/day1/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -6112,14 +6142,28 @@
     <service id="framework_extra_bundle.argument_name_convertor" class="Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter">
       <argument type="service" id="argument_metadata_factory"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CheckAttendanceController" class="App\Controller\CheckAttendanceController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CheckAttendanceController" class="App\Controller\CheckAttendanceController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CheckAttendanceController" class="App\Controller\CheckAttendanceController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LuckyController" class="App\Controller\LuckyController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LuckyController" class="App\Controller\LuckyController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LuckyController" class="App\Controller\LuckyController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProductController" class="App\Controller\ProductController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProductController" class="App\Controller\ProductController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProductController" class="App\Controller\ProductController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\StudentController" class="App\Controller\StudentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\StudentController" class="App\Controller\StudentController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\StudentController" class="App\Controller\StudentController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CheckAttendanceType" class="App\Form\CheckAttendanceType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CheckAttendanceType" class="App\Form\CheckAttendanceType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProductType" class="App\Form\ProductType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ProductType" class="App\Form\ProductType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\StudentType" class="App\Form\StudentType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\StudentType" class="App\Form\StudentType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CheckAttendanceRepository" class="App\Repository\CheckAttendanceRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CheckAttendanceRepository" class="App\Repository\CheckAttendanceRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StudentRepository" class="App\Repository\StudentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\StudentRepository" class="App\Repository\StudentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6450,6 +6494,44 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.MdkrM0p" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="checkAttendanceRepository" type="service_closure" id="App\Repository\CheckAttendanceRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.plSQT4L" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="checkAttendance" type="service_closure" id=".errored..service_locator.plSQT4L.App\Entity\CheckAttendance"/>
+      </argument>
+    </service>
+    <service id=".service_locator.1_0iiG0" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="checkAttendance" type="service_closure" id=".errored..service_locator.1_0iiG0.App\Entity\CheckAttendance"/>
+        <argument key="checkAttendanceRepository" type="service_closure" id="App\Repository\CheckAttendanceRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.JeTwYn4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="productRepository" type="service_closure" id="App\Repository\ProductRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.iyEwlLH" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="product" type="service_closure" id=".errored..service_locator.iyEwlLH.App\Entity\Product"/>
+      </argument>
+    </service>
+    <service id=".service_locator.iSfEFXi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="product" type="service_closure" id=".errored..service_locator.iSfEFXi.App\Entity\Product"/>
+        <argument key="productRepository" type="service_closure" id="App\Repository\ProductRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.QLgPRBq" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6463,9 +6545,19 @@
         <argument key="studentRepository" type="service_closure" id="App\Repository\StudentRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.uXNcPh2" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.rqQJTLR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\CheckAttendanceController::delete" type="service_closure" id=".service_locator.1_0iiG0"/>
+        <argument key="App\Controller\CheckAttendanceController::edit" type="service_closure" id=".service_locator.1_0iiG0"/>
+        <argument key="App\Controller\CheckAttendanceController::index" type="service_closure" id=".service_locator.MdkrM0p"/>
+        <argument key="App\Controller\CheckAttendanceController::new" type="service_closure" id=".service_locator.MdkrM0p"/>
+        <argument key="App\Controller\CheckAttendanceController::show" type="service_closure" id=".service_locator.plSQT4L"/>
+        <argument key="App\Controller\ProductController::delete" type="service_closure" id=".service_locator.iSfEFXi"/>
+        <argument key="App\Controller\ProductController::edit" type="service_closure" id=".service_locator.iSfEFXi"/>
+        <argument key="App\Controller\ProductController::index" type="service_closure" id=".service_locator.JeTwYn4"/>
+        <argument key="App\Controller\ProductController::new" type="service_closure" id=".service_locator.JeTwYn4"/>
+        <argument key="App\Controller\ProductController::show" type="service_closure" id=".service_locator.iyEwlLH"/>
         <argument key="App\Controller\StudentController::delete" type="service_closure" id=".service_locator.ho8CQlj"/>
         <argument key="App\Controller\StudentController::edit" type="service_closure" id=".service_locator.ho8CQlj"/>
         <argument key="App\Controller\StudentController::index" type="service_closure" id=".service_locator.QLgPRBq"/>
@@ -6477,6 +6569,16 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
+        <argument key="App\Controller\CheckAttendanceController:delete" type="service_closure" id=".service_locator.1_0iiG0"/>
+        <argument key="App\Controller\CheckAttendanceController:edit" type="service_closure" id=".service_locator.1_0iiG0"/>
+        <argument key="App\Controller\CheckAttendanceController:index" type="service_closure" id=".service_locator.MdkrM0p"/>
+        <argument key="App\Controller\CheckAttendanceController:new" type="service_closure" id=".service_locator.MdkrM0p"/>
+        <argument key="App\Controller\CheckAttendanceController:show" type="service_closure" id=".service_locator.plSQT4L"/>
+        <argument key="App\Controller\ProductController:delete" type="service_closure" id=".service_locator.iSfEFXi"/>
+        <argument key="App\Controller\ProductController:edit" type="service_closure" id=".service_locator.iSfEFXi"/>
+        <argument key="App\Controller\ProductController:index" type="service_closure" id=".service_locator.JeTwYn4"/>
+        <argument key="App\Controller\ProductController:new" type="service_closure" id=".service_locator.JeTwYn4"/>
+        <argument key="App\Controller\ProductController:show" type="service_closure" id=".service_locator.iyEwlLH"/>
         <argument key="App\Controller\StudentController:delete" type="service_closure" id=".service_locator.ho8CQlj"/>
         <argument key="App\Controller\StudentController:edit" type="service_closure" id=".service_locator.ho8CQlj"/>
         <argument key="App\Controller\StudentController:index" type="service_closure" id=".service_locator.QLgPRBq"/>
@@ -6546,9 +6648,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.Zo_Aptf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.qzBMLSk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\CheckAttendanceType" type="service_closure" id="App\Form\CheckAttendanceType"/>
+        <argument key="App\Form\ProductType" type="service_closure" id="App\Form\ProductType"/>
         <argument key="App\Form\StudentType" type="service_closure" id="App\Form\StudentType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
@@ -6635,9 +6739,11 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.44.jIy9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.l1no0LR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\CheckAttendanceRepository" type="service_closure" id="App\Repository\CheckAttendanceRepository"/>
+        <argument key="App\Repository\ProductRepository" type="service_closure" id="App\Repository\ProductRepository"/>
         <argument key="App\Repository\StudentRepository" type="service_closure" id="App\Repository\StudentRepository"/>
       </argument>
     </service>
@@ -6907,9 +7013,21 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\CheckAttendanceController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CheckAttendanceController"/>
+      <argument>App\Controller\CheckAttendanceController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
     <service id=".service_locator.GNc8e5B.App\Controller\LuckyController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\LuckyController"/>
       <argument>App\Controller\LuckyController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\ProductController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProductController"/>
+      <argument>App\Controller\ProductController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
@@ -7093,12 +7211,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.uXNcPh2"/>
+      <argument type="service" id=".service_locator.rqQJTLR"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.uXNcPh2"/>
+      <argument type="service" id=".service_locator.rqQJTLR"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -7127,6 +7245,10 @@
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.plSQT4L.App\Entity\CheckAttendance" class="App\Entity\CheckAttendance"/>
+    <service id=".errored..service_locator.1_0iiG0.App\Entity\CheckAttendance" class="App\Entity\CheckAttendance"/>
+    <service id=".errored..service_locator.iyEwlLH.App\Entity\Product" class="App\Entity\Product"/>
+    <service id=".errored..service_locator.iSfEFXi.App\Entity\Product" class="App\Entity\Product"/>
     <service id=".errored..service_locator.ho8CQlj.App\Entity\Student" class="App\Entity\Student"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
@@ -7817,7 +7939,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>aeOAJKU2vj</argument>
       <argument>0</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -7827,7 +7949,7 @@
       <argument>OUkCsOnM1P</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -7835,7 +7957,7 @@
       <argument>KMlIYgvhfo</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -7843,7 +7965,7 @@
       <argument>KlbwslH8jH</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -7851,7 +7973,7 @@
       <argument>HTU4kkqwKp</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -7859,14 +7981,14 @@
       <argument>cm1sfyA6mx</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>B5LbUocMLQ</argument>
       <argument>0</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -7876,7 +7998,7 @@
       <argument>2uKdTpm+E+</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -7886,7 +8008,7 @@
       <argument>UHomZHoK9l</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\PC\SymfonyDir\day1\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/PC/SymfonyDir/day1/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -8064,7 +8186,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.uXNcPh2"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.rqQJTLR"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8088,9 +8210,9 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.DpHPGA6" alias=".service_locator.uXNcPh2"/>
+    <service id=".service_locator._KwHDfG" alias=".service_locator.rqQJTLR"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.DeAi7qq" alias=".service_locator.Zo_Aptf"/>
+    <service id=".service_locator.LhJ7lPq" alias=".service_locator.qzBMLSk"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.W9y3dzm" alias=".service_locator.GNc8e5B"/>
@@ -8117,6 +8239,12 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
+    <service id=".service_locator.1YocuJa" alias=".service_locator.MdkrM0p"/>
+    <service id=".service_locator.vFPcBsl" alias=".service_locator.plSQT4L"/>
+    <service id=".service_locator.Jrvcfnp" alias=".service_locator.1_0iiG0"/>
+    <service id=".service_locator.0.yQVTX" alias=".service_locator.JeTwYn4"/>
+    <service id=".service_locator.edR2Jhi" alias=".service_locator.iyEwlLH"/>
+    <service id=".service_locator.sXgoOZw" alias=".service_locator.iSfEFXi"/>
     <service id=".service_locator.dLoDWjn" alias=".service_locator.QLgPRBq"/>
     <service id=".service_locator.YSoq4A3" alias=".service_locator.ho8CQlj"/>
     <service id=".service_locator.Wd_D6Iy" alias=".service_locator.GNc8e5B"/>

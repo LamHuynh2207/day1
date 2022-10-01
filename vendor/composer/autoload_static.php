@@ -601,8 +601,20 @@ class ComposerStaticInitba4501c561ced9cdedd5aabe8b8a66c3
     );
 
     public static $classMap = array (
+        'App\\Controller\\CheckAttendanceController' => __DIR__ . '/../..' . '/src/Controller/CheckAttendanceController.php',
         'App\\Controller\\LuckyController' => __DIR__ . '/../..' . '/src/Controller/LuckyController.php',
+        'App\\Controller\\ProductController' => __DIR__ . '/../..' . '/src/Controller/ProductController.php',
+        'App\\Controller\\StudentController' => __DIR__ . '/../..' . '/src/Controller/StudentController.php',
+        'App\\Entity\\CheckAttendance' => __DIR__ . '/../..' . '/src/Entity/CheckAttendance.php',
+        'App\\Entity\\Product' => __DIR__ . '/../..' . '/src/Entity/Product.php',
+        'App\\Entity\\Student' => __DIR__ . '/../..' . '/src/Entity/Student.php',
+        'App\\Form\\CheckAttendanceType' => __DIR__ . '/../..' . '/src/Form/CheckAttendanceType.php',
+        'App\\Form\\ProductType' => __DIR__ . '/../..' . '/src/Form/ProductType.php',
+        'App\\Form\\StudentType' => __DIR__ . '/../..' . '/src/Form/StudentType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\CheckAttendanceRepository' => __DIR__ . '/../..' . '/src/Repository/CheckAttendanceRepository.php',
+        'App\\Repository\\ProductRepository' => __DIR__ . '/../..' . '/src/Repository/ProductRepository.php',
+        'App\\Repository\\StudentRepository' => __DIR__ . '/../..' . '/src/Repository/StudentRepository.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',

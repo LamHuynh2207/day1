@@ -85,7 +85,20 @@ class __TwigTemplate_6e1f0561d494f5f41618659ed2ef7803721560e398c9a23a995b9ecef0d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Student index</h1>
+        echo "    <div class=\"container\">
+        <header class=\"d-flex justify-content-center py-3\">
+        <ul class=\"nav nav-pills\">
+            <li class=\"nav-item\"><a href=\"#\" class=\"nav-link active\" aria-current=\"page\">Home</a></li>
+            <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Features</a></li>
+            <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Pricing</a></li>
+            <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">FAQs</a></li>
+            <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">About</a></li>
+        </ul>
+        </header>
+    </div>
+
+    <div class=\"container\">
+    <h1>Student index</h1>
 
     <table class=\"table\">
         <thead>
@@ -99,37 +112,37 @@ class __TwigTemplate_6e1f0561d494f5f41618659ed2ef7803721560e398c9a23a995b9ecef0d
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 32
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["students"]) || array_key_exists("students", $context) ? $context["students"] : (function () { throw new RuntimeError('Variable "students" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["students"]) || array_key_exists("students", $context) ? $context["students"] : (function () { throw new RuntimeError('Variable "students" does not exist.', 32, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["student"]) {
-            // line 20
+            // line 33
             echo "            <tr>
                 <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["student"], "id", [], "any", false, false, false, 21), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["student"], "id", [], "any", false, false, false, 34), "html", null, true);
             echo "</td>
                 <td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["student"], "Name", [], "any", false, false, false, 22), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["student"], "Name", [], "any", false, false, false, 35), "html", null, true);
             echo "</td>
                 <td>";
-            // line 23
-            ((twig_get_attribute($this->env, $this->source, $context["student"], "Dob", [], "any", false, false, false, 23)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["student"], "Dob", [], "any", false, false, false, 23), "Y-m-d"), "html", null, true))) : (print ("")));
+            // line 36
+            ((twig_get_attribute($this->env, $this->source, $context["student"], "Dob", [], "any", false, false, false, 36)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["student"], "Dob", [], "any", false, false, false, 36), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["student"], "PhoneNum", [], "any", false, false, false, 24), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["student"], "PhoneNum", [], "any", false, false, false, 37), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_student_show", ["id" => twig_get_attribute($this->env, $this->source, $context["student"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_student_show", ["id" => twig_get_attribute($this->env, $this->source, $context["student"], "id", [], "any", false, false, false, 39)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_student_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["student"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            // line 40
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_student_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["student"], "id", [], "any", false, false, false, 40)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -137,7 +150,7 @@ class __TwigTemplate_6e1f0561d494f5f41618659ed2ef7803721560e398c9a23a995b9ecef0d
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 31
+            // line 44
             echo "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -146,14 +159,75 @@ class __TwigTemplate_6e1f0561d494f5f41618659ed2ef7803721560e398c9a23a995b9ecef0d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['student'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 48
         echo "        </tbody>
     </table>
-
-    <a href=\"";
-        // line 38
+    <button class=\"btn btn-primary\" href=\"";
+        // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_student_new");
-        echo "\">Create new</a>
+        echo "\" type=\"button\">Create new</button>
+    </div>
+    
+    <div class=\"container\">
+  <footer class=\"py-5\">
+    <div class=\"row\">
+      <div class=\"col-6 col-md-2 mb-3\">
+        <h5>Section</h5>
+        <ul class=\"nav flex-column\">
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Home</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Features</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Pricing</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">FAQs</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">About</a></li>
+        </ul>
+      </div>
+
+      <div class=\"col-6 col-md-2 mb-3\">
+        <h5>Section</h5>
+        <ul class=\"nav flex-column\">
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Home</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Features</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Pricing</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">FAQs</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">About</a></li>
+        </ul>
+      </div>
+
+      <div class=\"col-6 col-md-2 mb-3\">
+        <h5>Section</h5>
+        <ul class=\"nav flex-column\">
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Home</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Features</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Pricing</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">FAQs</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">About</a></li>
+        </ul>
+      </div>
+
+      <div class=\"col-md-5 offset-md-1 mb-3\">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class=\"d-flex flex-column flex-sm-row w-100 gap-2\">
+            <label for=\"newsletter1\" class=\"visually-hidden\">Email address</label>
+            <input id=\"newsletter1\" type=\"text\" class=\"form-control\" placeholder=\"Email address\">
+            <button class=\"btn btn-primary\" type=\"button\">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class=\"d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top\">
+      <p>© 2022 Company, Inc. All rights reserved.</p>
+      <ul class=\"list-unstyled d-flex\">
+        <li class=\"ms-3\"><a class=\"link-dark\" href=\"#\"><svg class=\"bi\" width=\"24\" height=\"24\"><use xlink:href=\"#twitter\"></use></svg></a></li>
+        <li class=\"ms-3\"><a class=\"link-dark\" href=\"#\"><svg class=\"bi\" width=\"24\" height=\"24\"><use xlink:href=\"#instagram\"></use></svg></a></li>
+        <li class=\"ms-3\"><a class=\"link-dark\" href=\"#\"><svg class=\"bi\" width=\"24\" height=\"24\"><use xlink:href=\"#facebook\"></use></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -175,7 +249,7 @@ class __TwigTemplate_6e1f0561d494f5f41618659ed2ef7803721560e398c9a23a995b9ecef0d
 
     public function getDebugInfo()
     {
-        return array (  155 => 38,  150 => 35,  141 => 31,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  167 => 50,  163 => 48,  154 => 44,  145 => 40,  141 => 39,  136 => 37,  132 => 36,  128 => 35,  124 => 34,  121 => 33,  116 => 32,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -185,6 +259,19 @@ class __TwigTemplate_6e1f0561d494f5f41618659ed2ef7803721560e398c9a23a995b9ecef0d
 {% block title %}Student index{% endblock %}
 
 {% block body %}
+    <div class=\"container\">
+        <header class=\"d-flex justify-content-center py-3\">
+        <ul class=\"nav nav-pills\">
+            <li class=\"nav-item\"><a href=\"#\" class=\"nav-link active\" aria-current=\"page\">Home</a></li>
+            <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Features</a></li>
+            <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Pricing</a></li>
+            <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">FAQs</a></li>
+            <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">About</a></li>
+        </ul>
+        </header>
+    </div>
+
+    <div class=\"container\">
     <h1>Student index</h1>
 
     <table class=\"table\">
@@ -216,8 +303,69 @@ class __TwigTemplate_6e1f0561d494f5f41618659ed2ef7803721560e398c9a23a995b9ecef0d
         {% endfor %}
         </tbody>
     </table>
+    <button class=\"btn btn-primary\" href=\"{{ path('app_student_new') }}\" type=\"button\">Create new</button>
+    </div>
+    
+    <div class=\"container\">
+  <footer class=\"py-5\">
+    <div class=\"row\">
+      <div class=\"col-6 col-md-2 mb-3\">
+        <h5>Section</h5>
+        <ul class=\"nav flex-column\">
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Home</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Features</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Pricing</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">FAQs</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">About</a></li>
+        </ul>
+      </div>
 
-    <a href=\"{{ path('app_student_new') }}\">Create new</a>
+      <div class=\"col-6 col-md-2 mb-3\">
+        <h5>Section</h5>
+        <ul class=\"nav flex-column\">
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Home</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Features</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Pricing</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">FAQs</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">About</a></li>
+        </ul>
+      </div>
+
+      <div class=\"col-6 col-md-2 mb-3\">
+        <h5>Section</h5>
+        <ul class=\"nav flex-column\">
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Home</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Features</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">Pricing</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">FAQs</a></li>
+          <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-muted\">About</a></li>
+        </ul>
+      </div>
+
+      <div class=\"col-md-5 offset-md-1 mb-3\">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class=\"d-flex flex-column flex-sm-row w-100 gap-2\">
+            <label for=\"newsletter1\" class=\"visually-hidden\">Email address</label>
+            <input id=\"newsletter1\" type=\"text\" class=\"form-control\" placeholder=\"Email address\">
+            <button class=\"btn btn-primary\" type=\"button\">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class=\"d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top\">
+      <p>© 2022 Company, Inc. All rights reserved.</p>
+      <ul class=\"list-unstyled d-flex\">
+        <li class=\"ms-3\"><a class=\"link-dark\" href=\"#\"><svg class=\"bi\" width=\"24\" height=\"24\"><use xlink:href=\"#twitter\"></use></svg></a></li>
+        <li class=\"ms-3\"><a class=\"link-dark\" href=\"#\"><svg class=\"bi\" width=\"24\" height=\"24\"><use xlink:href=\"#instagram\"></use></svg></a></li>
+        <li class=\"ms-3\"><a class=\"link-dark\" href=\"#\"><svg class=\"bi\" width=\"24\" height=\"24\"><use xlink:href=\"#facebook\"></use></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
 {% endblock %}
 ", "student/index.html.twig", "C:\\Users\\PC\\SymfonyDir\\day1\\templates\\student\\index.html.twig");
     }

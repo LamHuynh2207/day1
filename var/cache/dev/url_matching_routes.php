@@ -8,6 +8,10 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
+        '/check/attendance' => [[['_route' => 'app_check_attendance_index', '_controller' => 'App\\Controller\\CheckAttendanceController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/check/attendance/new' => [[['_route' => 'app_check_attendance_new', '_controller' => 'App\\Controller\\CheckAttendanceController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/product' => [[['_route' => 'app_product_index', '_controller' => 'App\\Controller\\ProductController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/product/new' => [[['_route' => 'app_product_new', '_controller' => 'App\\Controller\\ProductController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/student' => [[['_route' => 'app_student_index', '_controller' => 'App\\Controller\\StudentController::index'], null, ['GET' => 0], null, true, false, null]],
         '/student/new' => [[['_route' => 'app_student_new', '_controller' => 'App\\Controller\\StudentController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
@@ -21,39 +25,55 @@ return [
     ],
     [ // $regexpList
         0 => '{^(?'
+                .'|/check/attendance/([^/]++)(?'
+                    .'|(*:36)'
+                    .'|/edit(*:48)'
+                    .'|(*:55)'
+                .')'
+                .'|/product/([^/]++)(?'
+                    .'|(*:83)'
+                    .'|/edit(*:95)'
+                    .'|(*:102)'
+                .')'
                 .'|/student/([^/]++)(?'
-                    .'|(*:27)'
-                    .'|/edit(*:39)'
-                    .'|(*:46)'
+                    .'|(*:131)'
+                    .'|/edit(*:144)'
+                    .'|(*:152)'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:85)'
-                    .'|wdt/([^/]++)(*:104)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:192)'
+                    .'|wdt/([^/]++)(*:212)'
                     .'|profiler/([^/]++)(?'
                         .'|/(?'
-                            .'|search/results(*:150)'
-                            .'|router(*:164)'
+                            .'|search/results(*:258)'
+                            .'|router(*:272)'
                             .'|exception(?'
-                                .'|(*:184)'
-                                .'|\\.css(*:197)'
+                                .'|(*:292)'
+                                .'|\\.css(*:305)'
                             .')'
                         .')'
-                        .'|(*:207)'
+                        .'|(*:315)'
                     .')'
                 .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        27 => [[['_route' => 'app_student_show', '_controller' => 'App\\Controller\\StudentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        39 => [[['_route' => 'app_student_edit', '_controller' => 'App\\Controller\\StudentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        46 => [[['_route' => 'app_student_delete', '_controller' => 'App\\Controller\\StudentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        85 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        104 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        150 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        164 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        184 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        197 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        207 => [
+        36 => [[['_route' => 'app_check_attendance_show', '_controller' => 'App\\Controller\\CheckAttendanceController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        48 => [[['_route' => 'app_check_attendance_edit', '_controller' => 'App\\Controller\\CheckAttendanceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        55 => [[['_route' => 'app_check_attendance_delete', '_controller' => 'App\\Controller\\CheckAttendanceController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        83 => [[['_route' => 'app_product_show', '_controller' => 'App\\Controller\\ProductController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        95 => [[['_route' => 'app_product_edit', '_controller' => 'App\\Controller\\ProductController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        102 => [[['_route' => 'app_product_delete', '_controller' => 'App\\Controller\\ProductController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        131 => [[['_route' => 'app_student_show', '_controller' => 'App\\Controller\\StudentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        144 => [[['_route' => 'app_student_edit', '_controller' => 'App\\Controller\\StudentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        152 => [[['_route' => 'app_student_delete', '_controller' => 'App\\Controller\\StudentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        192 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        212 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        258 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        272 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        292 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        305 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        315 => [
             [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
